@@ -3,6 +3,8 @@
 
 ### Linux Debian
 ```
+sudo apt-get install software-properties-common
+
 # repositório NVIDIA for Debian
 # https://developer.nvidia.com/cuda-12-0-0-download-archive?target_os=Linux&target_arch=x86_64&Distribution=Debian&target_version=11&target_type=deb_network
 
