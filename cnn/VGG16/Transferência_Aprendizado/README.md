@@ -11,7 +11,7 @@ As CNNs fazem uso de camadas de convolução que utilizam filtros para ajudar a 
 Veja como.
 Por exemplo, digamos que haja um problema chamado classificação ImageNet, um desafio popular de classificação de imagens onde existem milhões de imagens. Você precisa usar essas imagens para predizê-las e classificá-las em milhares de classes.
 
-[](https://production-media.paperswithcode.com/datasets/ImageNet-0000000008-f2e87edd_Y0fT5zg.jpg)
+![](fotos/imagem02.avif)
 
 Todos os anos, um modelo supera o outro. Uma vez estabelecido que um determinado modelo tem o melhor desempenho, todos os parâmetros ou todos os pesos que ele aprendeu são disponibilizados publicamente. Usando o aplicativo Keras, você pode usar diretamente o melhor modelo e todos os pesos pré-treinados para não precisar executar o processo de treinamento novamente. Isso economiza muito tempo.
 
