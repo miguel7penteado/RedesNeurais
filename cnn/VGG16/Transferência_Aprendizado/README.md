@@ -128,6 +128,51 @@ Saída:
 
 ![](fotos/saida04.avif)
 
+![](fotos/saida05.avif)
+
+Agora você pode testemunhar a magia da aprendizagem por transferência. O total de parâmetros é de 14 milhões, mas como você pode ver, os parâmetros treináveis ​​são de apenas 15.000. Isso reduz muito tempo e elimina grande parte da complexidade.
+
+A etapa seguinte experimenta o otimizador Adam, a função de perda binária_crossentropy e a precisão como métricas.
+
+```python
+
+from keras import optimizers
+
+adam = optimizers.Adam()
+model.compile(loss='binary_crossentropy', optimizer adam, metrics=['accuracy'])
+
+```
+
+## Aumento de dados
+
+A próxima etapa é o aumento da imagem. Você importará prepocess_input pois houve algumas etapas de pré-processamento quando o modelo real foi treinado no problema imagenet. Para obter resultados semelhantes, você precisa usar as etapas exatas de pré-processamento. Alguns, incluindo deslocamento e zoom, são usados ​​para reduzir o overfitting.
+
+
+```python
+
+train_datagen = ImageDataGenerator( preprocessing_function=preprocess_input, rotation_range=40, width_shift_range=0.2, height_shift_range=0.2,
+
+```
+
+O mesmo é feito para o conjunto de testes.
+
+```python
+
+test_datagen = ImageDataGenerator( preprocessing_function=preprocess_input, rotation range=40, width_shift_range=0.2, height_shift_range=0.2,
+
+```
+
+Especifique o tamanho de destino da saída, o tamanho do lote e a classe.
+
+```python
+
+train set = train_datagen. flow_from_directory (train_path, target_size =1 (224, 224), batch_size = 32, class_mode 'categorical')
+
+```
+
+Saída:
+
+
 
 
 
