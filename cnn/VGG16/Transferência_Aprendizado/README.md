@@ -158,7 +158,7 @@ O mesmo é feito para o conjunto de testes.
 
 ```python
 
-test_datagen = ImageDataGenerator( preprocessing_function=preprocess_input, rotation range=40, width_shift_range=0.2, height_shift_range=0.2,
+test_datagen = ImageDataGenerator( preprocessing_function=preprocess_input, rotation_range=40, width_shift_range=0.2, height_shift_range=0.2,
 
 ```
 
@@ -166,14 +166,40 @@ Especifique o tamanho de destino da saída, o tamanho do lote e a classe.
 
 ```python
 
-train set = train_datagen. flow_from_directory (train_path, target_size =1 (224, 224), batch_size = 32, class_mode 'categorical')
+train_set = train_datagen.flow_from_directory(train_path, target_size = (224, 224), batch_size = 32, class_mode 'categorical')
 
 ```
 
 Saída:
 
+![](fotos/saida06.avif)
+
+O mesmo é feito para o conjunto de testes.
+
+```python
+
+test_set = test_datagen.flow_from_directory(test_path, target_size = (224, 224), batch_size = 32, class_mode = categorical')
+
+```
+
+Saída:
+
+![](fotos/saida07.avif)
+
+## Treinando o modelo
+
+Agora que o aumento de dados foi concluído, é hora de treinar o modelo. O ponto de verificação do modelo é usado para salvar o melhor modelo. Você usará 10 épocas com 5 etapas por época. As etapas de validação são iguais a 32.
+
+```python
 
 
+```
+
+Saída:
+
+![](fotos/saida08.avif)
+
+![](fotos/saida09.avif)
 
 
 
