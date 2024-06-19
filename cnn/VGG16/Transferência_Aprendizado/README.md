@@ -65,15 +65,13 @@ folder = train_path+ '/benign'
 
 Este próximo passo, que não é obrigatório, exibe as imagens benignas.
 
-Saída 01
+Saída 01:
 
 ![](fotos/amostra01.avif)
 
-Saída 02
+Saída 02:
 
 ![](fotos/amostra02.avif)
-
-
 
 
 ## Implementando aprendizagem por transferência
@@ -84,6 +82,8 @@ Comece importando VGG16 de keras.applications e forneça o tamanho da imagem de 
 ```python
 VGG16(input_shape=IMAGE_SIZE + [3], weights='imagenet',vgg include_top=False)
 ```
+
+Saída:
 
 ![](fotos/saida01.avif)
 
