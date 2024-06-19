@@ -65,6 +65,17 @@ folder = train_path+ '/benign'
 
 Este próximo passo, que não é obrigatório, exibe as imagens benignas.
 
+Saída 01
+
+![](fotos/amostra01.avif)
+
+Saída 02
+
+![](fotos/amostra02.avif)
+
+
+
+
 ## Implementando aprendizagem por transferência
 
 Agora que o conjunto de dados foi carregado, é hora de implementar a aprendizagem por transferência.
@@ -86,12 +97,36 @@ Saída:
 
 ![](fotos/saida02.avif)
 
+```python
+for layer in vgg.layers:
+    layer.trainable = False
+```
 
+```python
+folders glob('/content/drive/MyDrive/skincancerdataset/train/*')
+print(len(folders))
+```
 
+Você pode obter o número de pastas usando glob.
 
+Saída:
 
+![](fotos/saida03.avif)
 
+Em seguida, especifique uma camada nivelada para que qualquer saída obtida na última camada seja condensada em uma dimensão. Você precisa de uma camada de saída com apenas dois neurônios. A função de ativação utilizada é softmax. Você também pode usar sigmoid, pois a saída possui apenas duas classes, mas esta é a forma mais generalizada.
 
+```python
+
+x = Flatten()(vgg.output)
+prediction Dense(len(folders), activation='softmax') (x)
+model = Model(inputs=vgg.input, outputs prediction)
+model.summary()
+
+```
+
+Saída:
+
+![](fotos/saida04.avif)
 
 
 
