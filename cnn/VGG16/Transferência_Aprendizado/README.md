@@ -191,7 +191,12 @@ Saída:
 Agora que o aumento de dados foi concluído, é hora de treinar o modelo. O ponto de verificação do modelo é usado para salvar o melhor modelo. Você usará 10 épocas com 5 etapas por época. As etapas de validação são iguais a 32.
 
 ```python
+from datetime import datetime
+from keras.callbacks import ModelCheckpoint
 
+checkpoint ModelCheckpoint(filepath='mymodel.h5', verbose=2, save_best_only=True) 
+
+callbacks = [checkpoint]
 
 ```
 
@@ -201,6 +206,46 @@ Saída:
 
 ![](fotos/saida09.avif)
 
+
+```python
+
+plt.plot(model_history.history['accuracy'])
+plt.plot(model_history.history['val_accuracy'])
+plt.title('Precição dos valores do modelo CNN')
+plt.ylabel('Precição')
+plt.xlabel('Epoch')
+
+```
+
+Saída:
+
+![](fotos/grafico01.avif)
+
+A precisão pode ser vista assim que o treinamento for concluído. A melhor parte é que você realmente não precisa fazer nada, exceto pegar os pesos diretamente e desenvolver o modelo de melhor desempenho no conjunto de dados popular.
+
+## Vantagens de usar o aprendizado de transferência no aprendizado de máquina
+
+- Isso economiza tempo e recursos. A maioria dos problemas de aprendizado de máquina envolve o treinamento de uma grande quantidade de dados. Esse tipo de dados de treinamento rotulados leva mais tempo. No entanto, na aprendizagem por transferência a maioria dos modelos são pré-treinados, o que reduz o tamanho dos dados de treinamento.
+
+- Melhora a eficiência de um modelo durante o treinamento. O desenvolvimento de modelos de aprendizado de máquina para resolver problemas complexos é demorado. Com a aprendizagem por transferência, você não precisa criar um modelo do zero. Você pode reutilizar o modelo desenvolvido transferindo seu conhecimento.
+
+- Em vez de usar algoritmos diferentes para resolver novos problemas, a aprendizagem por transferência fornece uma maneira mais generalizada de resolver o problema.
+
+## Aplicações de aprendizagem por transferência
+
+Aqui estão algumas aplicações reais de aprendizagem por transferência.
+
+- No processamento de linguagem natural, a aprendizagem por transferência pode ser usada para prever a próxima palavra em uma sequência.
+
+- Os modelos de aprendizagem por transferência são adequados para reconhecer imagens. Por exemplo, um modelo desenvolvido para identificar gatos pode ser usado para identificar cães.
+
+- No reconhecimento de fala, o modelo desenvolvido para reconhecer um idioma pode ser usado para reconhecer outro idioma.
+
+- O modelo desenvolvido para reconhecer exames de ressonância magnética também pode ser usado para detectar exames de tomografia computadorizada.
+
+- Um modelo de aprendizado de máquina desenvolvido para classificar e-mails pode ser usado para verificar e-mails de spam.
+
+Conforme demonstrado, a aprendizagem por transferência é uma técnica muito eficaz quando se trabalha em problemas de classificação de imagens. Agora que você aprendeu usando a CNN, você pode experimentar diferentes modelos e realizar o ajuste de hiperparâmetros usando o sintonizador Keras.
 
 
 
