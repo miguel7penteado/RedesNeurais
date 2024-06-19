@@ -6,7 +6,7 @@ Observe que um pré-requisito para a aprendizagem por transferência de aprendiz
 
 As CNNs fazem uso de camadas de convolução que utilizam filtros para ajudar a reconhecer os recursos importantes de uma imagem. Esses recursos, que são muitos, ajudam a distinguir uma imagem específica. Sempre que você treina uma CNN em um monte de imagens, todos esses recursos são aprendidos internamente. Além disso, quando você usa uma CNN profunda, o número de parâmetros que estão sendo aprendidos – também chamados de pesos – pode chegar a milhões. Portanto, quando vários parâmetros precisam ser aprendidos, isso leva tempo. E é aqui que a aprendizagem por transferência ajuda.
 
-[imagem]
+![](fotos/imagem01.avif)
 
 Veja como.
 Por exemplo, digamos que haja um problema chamado classificação ImageNet, um desafio popular de classificação de imagens onde existem milhões de imagens. Você precisa usar essas imagens para predizê-las e classificá-las em milhares de classes.
