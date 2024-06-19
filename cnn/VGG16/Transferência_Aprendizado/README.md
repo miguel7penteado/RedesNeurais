@@ -149,6 +149,7 @@ A próxima etapa é o aumento da imagem. Você importará prepocess_input pois h
 
 
 ```python
+# tf.keras.preprocessing.image.ImageDataGenerator
 
 train_datagen = ImageDataGenerator( preprocessing_function=preprocess_input, rotation_range=40, width_shift_range=0.2, height_shift_range=0.2,
 
@@ -157,6 +158,8 @@ train_datagen = ImageDataGenerator( preprocessing_function=preprocess_input, rot
 O mesmo é feito para o conjunto de testes.
 
 ```python
+
+# tf.keras.preprocessing.image.ImageDataGenerator 
 
 test_datagen = ImageDataGenerator( preprocessing_function=preprocess_input, rotation_range=40, width_shift_range=0.2, height_shift_range=0.2,
 
