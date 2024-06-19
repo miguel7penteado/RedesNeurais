@@ -40,6 +40,28 @@ A seguir, mencione o tamanho da imagem. Lembre-se de que o modelo foi treinado n
 IMAGE_SIZE = [224, 224]
 ```
 
+O problema de classificação do ImageNet tem como saída 1.000 classes, mas você também pode ter menos. Saiba que você precisa fazer uma alteração na camada de saída. Todas as camadas ocultas e todas as camadas de convolução e os pesos dessas camadas permanecem os mesmos.
+
+Para fins de demonstração, usaremos o conjunto de dados de câncer de pele, que contém uma série de imagens classificadas como benignas e malignas. O conjunto de dados pode ser baixado [aqui](https://www.kaggle.com/fanconic/skin-cancer-malignant-vs-benign)
+
+Na próxima etapa, especifique o caminho do trem e o caminho do teste.
+
+```python
+
+train_path = '/content/drive/MyDrive/skincancerdataset/train'
+test_path  = '/content/drive/MyDrive/skincancerdataset/test'
+
+```
+
+```python
+
+from PIL import Image
+import os
+from IPython.display import display
+from IPython.display import Image as _Imgdis
+folder = train_path+ '/benign'
+
+```
 
 
 
