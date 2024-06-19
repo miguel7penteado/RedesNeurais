@@ -63,6 +63,38 @@ folder = train_path+ '/benign'
 
 ```
 
+Este próximo passo, que não é obrigatório, exibe as imagens benignas.
+
+## Implementando aprendizagem por transferência
+
+Agora que o conjunto de dados foi carregado, é hora de implementar a aprendizagem por transferência.
+Comece importando VGG16 de keras.applications e forneça o tamanho da imagem de entrada. Os pesos são importados diretamente do problema de classificação ImageNet. Quando top = False, significa descartar os pesos da camada de entrada e da camada de saída, pois você usará suas próprias entradas e saídas.
+
+```python
+VGG16(input_shape=IMAGE_SIZE + [3], weights='imagenet',vgg include_top=False)
+```
+
+![](fotos/saida01.avif)
+
+Para camada em vgg.layers, layer.trainable=False para indicar que todas as camadas no modelo VGG16 não devem ser treinadas novamente. Você deseja usar apenas este parâmetro diretamente.
+
+```python
+vgg.input
+```
+
+Saída:
+
+![](fotos/saida02.avif)
+
+
+
+
+
+
+
+
+
+
 
 
 
