@@ -1,4 +1,6 @@
 
+```python
+
 %tensorflow_version 2.x
 
 import tensorflow as tf
@@ -259,3 +261,4 @@ print(“Predicted Label”,preds)
 
 predict_(“/content/drive/MyDrive/Rohini_Capstone/Car Images/Test Images/Rolls-Royce Phantom Sedan 2012/06155.jpg”)
 
+```
